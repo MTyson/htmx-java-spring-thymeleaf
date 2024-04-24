@@ -1,0 +1,5 @@
+<li>
+  <input type="checkbox" th:checked="${item.isCompleted}" hx-trigger="click" hx-target="closest li" hx-swap="outerHTML" th:hx-post="|/todos/${item.id}/complete|">
+  <span th:text="${item.description}" th:classappend="${item.isCompleted ? 'complete' : ''}"></span>
+  <button type="button" th:hx-post="|/todos/${item.id}/delete|" hx-swap="outerHTML" hx-target="closest li">&#128465;</button>
+</li>
